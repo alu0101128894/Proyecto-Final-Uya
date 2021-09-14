@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Calendario - Consulters</title>
+
+  <link rel="icon" href="images/logo_tiempo.png" sizes="32x32">
+
+  <!-- CORE CSS-->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet"
+    media="screen,projection">
+</head>
+
+<body>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <nav class="light-blue darken-4" role=”banner” arial-label="Cabecera de la web.">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="../index.html" class="brand-logo left"> <img alt="Logo tiempo."
+          class="foto-logo-tiempo" src="/imagenes/logo_tiempo.png" width="35" height="35"></img></a>
+      <ul role="navigation" class="right">
+        <li><a role="button" arial-label="Pagina de inicio." class="white-text" href="../index.html">Inicio</a></li>
+        <li><a role="button" arial-label="Pagina de contactos." class="white-text" href="../contacto.html">Contacto</a>
+        </li>
+      </ul>
+  </nav>
+
+  <div id="main" role="navigation" arial-label="Menu de navegacion principal.">
+    <div class="wrapper">
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <li class="user-details light-blue darken-4">
+            <div class="row">
+              <div class="col col s4 m4 l4">
+                <img src="images/silueta.png" alt="" class="circle responsive-img valign profile-image">
+              </div>
+              <div class="col col s8 m8 l8">
+                <a role="button" class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn"
+                  id="alumno" href="#" data-activates="profile-dropdown">Javi<i
+                    class="mdi-navigation-arrow-drop-down right"></i></a>
+                <p class="user-roal">Alumno</p>
+              </div>
+            </div>
+          </li>
+          <li class="bold"><a tabindex="0" role="button" arial-label="Ve a inicio." href="../index.html"
+              class="waves-effect"><i class="mdi-action-home"></i> Inicio</a>
+          <li class="bold"><a tabindex="0" role="button" arial-label="Ve a el panel." href="panel.html"
+              class="waves-effect waves-light"><i class="mdi-action-dashboard"></i> Panel</a>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion"></ul>
+          </li>
+          <li class="bold active"><a tabindex="0" role="button" arial-label="Ve al calendario." href="calendar.html"
+              class="waves-effect waves-light-blue darken-4"><i class="mdi-editor-insert-invitation"></i> Calendario</a>
+          </li>
+
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+
+              <li class="bold"><a tabindex="0" role="button" arial-label="Ve al calendario." href="javascript:singout()"
+                  class="waves-effect waves-light-blue darken-4"><i class="mdi-toggle-check-box"></i>Salir</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <a tabindex="0" role="button" href="#" data-activates="slide-out"
+          class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only light-blue darken-4"><i
+            class="mdi-navigation-menu"></i></a>
+      </aside>
+
+
+      <!-- START CONTENT -->
+      <section id="content">
+        <!--breadcrumbs start-->
+        <div id="breadcrumbs-wrapper" aria-label="Breadcrumbs">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h1 class="breadcrumbs-title">Calendario</h1>
+                <ol class="breadcrumbs">
+                  <li><a href="../index.html">Incio</a></li>
+                  <li><a href="panel.html">Panel</a></li>
+                  <li class="active">Calendario</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="section">
+            <div id="full-calendar">
+              <div class="row">
+                <div class="col s12 m4 l2">
+                  <div id='external-events'>
+                    <h5 class="header">Elementos a seleccionar:</h4>
+                    <div class='fc-event orange darken-1'>Tareas CYA</div>
+                    <div class='fc-event orange darken-3'>Tenis</div>
+                    <div class='fc-event orange accent-1'>Pádel</div>
+                  </div>
+                </div>
+                <div class="col s12 m8 l9">
+                  <div id='calendar'></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  <script src="../js/firebase.js"></script>
+  <script src="js/au.js"></script>
+
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+
+
+  <!-- Calendar Script -->
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/jquery-ui.custom.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/lib/moment.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="js/plugins/fullcalendar/fullcalendar-script.js"></script>
+
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="js/plugins.js"></script>
+
+</body>
+
+</html>

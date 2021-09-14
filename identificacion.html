@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Iniciar Sesión - Consulters</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/imagenes/logo_tiempo.png" sizes="64x64">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+  <nav class=" light-blue darken-4" role=”banner” arial-label="Cabecera de la web.">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo left"> <img alt="Logo tiempo." class="foto-logo-tiempo"
+          src="/imagenes/logo_tiempo.png" width="35" height="35"></img></a>
+      <ul hidden role=”navigation” arial-label="Menú principal" class="right hide-on-med-and-down showmenu">
+        <li><a role="button" tabindex="0" arial-label="Vuelve a la pagina de inicio." class="white-text"
+            href="index.html">Inicio</a></li>
+        <li><a role="button" tabindex="0" arial-label="Página de contactos." class="white-text"
+            href="contacto.html">Contacto</a></li>
+        <li hidden class="ocultarse"><a role="button" tabindex="0" arial-label="Pagina de identificacación."
+            class="white-text" href="identificacion.html">Iniciar Sesión</a></li>
+        <li hidden class="ocultarse"><a role="button" tabindex="0" arial-label="Pagina de registro" class="white-text"
+            href="registro.html">Registrar</a></li>
+        <li hidden class="mostrar"><a role="button" tabindex="0" class="white-text"
+            href="dashboard/panel.html">Panel</a></li>
+        <li hidden class="ocultarse"><a role="button" tabindex="0" arial-label="Pagina de de mapa web."
+            class="white-text" href="mapaweb.html">Mapa Web</a></li>
+        <li hidden class="mostrar"><a role="button" tabindex="0" class="white-text"
+            href="javascript:mainsingout()">Salir</a></li>
+      </ul>
+
+      <ul hidden role=”navigation” arial-label="Menú principal" id="nav-mobile" class="sidenav showmenu">
+        <li><a role="button" arial-label="Ve pagina de inicio." tabindex="-1" href="index.html">Inicio</a></li>
+        <li><a role="button" arial-label="Página de contactos." tabindex="-1" href="contacto.html">Contacto</a>
+        <li><a role="button" arial-label="Mapa Web." tabindex="-1" href="mapaweb.html">Mapa Web</a>
+        </li>
+        <li hidden class="ocultarse"><a role="button" arial-label="Pagina de identificacación." tabindex="-1"
+            href="identificacion.html">Iniciar Sesión</a></li>
+        <li hidden class="ocultarse"><a role="button" arial-label="Pagina de registro" tabindex="-1"
+            href="registro.html">Registrar</a></li>
+        <li hidden class="mostrar"><a role="button" tabindex="-1" href="dashboard/panel.html">Panel</a></li>
+        <li hidden class="mostrar"><a role="button" tabindex="-1" href="javascript:mainsingout()">Salir</a></li>
+      </ul>
+      <a arial-label="Menu." href="#" data-target="nav-mobile" class="sidenav-trigger"><i
+          class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <!--Formulario-->
+  <div role="form" class="parallax-container blue-grey darken-4">
+
+    <section id="content">
+      <div id="breadcrumbs-wrapper" class="blue-grey darken-4" aria-label="Breadcrumbs">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <h1 class="breadcrumbs-title">Iniciar Sesión</h1>
+              <ol class="breadcrumbs">
+                <li><a href="index.html">Incio</a></li>
+                <li class="active">Iniciar Sesión</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6 offset-m3">
+          <div class="card-panel z-depth-5">
+            <h3 class="center teal-text">Iniciar Sesión</h3>
+            <div class="row">
+              <form class="col s12 m12">
+                <div class="row">
+                  <div class="input-field col s12 m12">
+                    <i class="mdi-action-account-circle prefix"></i>
+                    <i class="material-icons teal-text">email</i>
+                    <label for="icon_prefix">Correo</label>
+                    <input arial-label="Introducir correo" id="identificar" type="email" class="validate"
+                      aria-required="true" required>
+                    <span class="helper-text" data-error="Email incorrecto. Porfavor introduce un correo"
+                      data-success="Correo introducido correctamente"></span>
+                  </div>
+
+                  <div class="input-field col s12 m12">
+                    <i class="fa fa-unlock-alt prefix"></i>
+                    <i class="material-icons teal-text">lock</i>
+                    <label for="icon_password">Contraseña</label>
+                    <input id="contraseña" arial-label="Introducir contraseña" type="password" class="validate"
+                      aria-required="true" required>
+                    <span class="helper-text" data-error="Utiliza como mínimo 6 carácteres"
+                      data-success="Contraseña introducido correctamente"></span>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <a class="btn waves-effect waves-light center teal" id="button-comenzar"
+              href="javascript:identificar()">Iniciar Sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer role=”contentinfo” arial-label="Toda la información necesaria con enlaces."
+    class="page-footer light-blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="center col l6 s12">
+          <h3>Sobre nosotros</h3>
+          <p class="grey-text text-lighten-4">Un alumno de Ingenería Informática motivado a crear un proyecto Consulters
+            para satisfacer las necesidades de los usuarios como la gestión del tiempo.</p>
+        </div>
+        <div class="col l3 s12">
+          <h3>Enlaces</h3>
+          <ul role=”navigation” arial-label="Menú de informacion.">
+            <li><a role="button" arial-label="Mapa web." tabindex="0" class="white-text" href="mapaweb.html">Mapa
+                web</a></li>
+            <li><a role="button" arial-label="Pagina de términos." tabindex="0" class="white-text"
+                href="#!">Términos</a></li>
+            <li><a role="button" arial-label="Ayuda." tabindex="0" class="white-text" href="#!">Ayuda</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h3 class="white-text">Redes e Informaciones</h3>
+          <ul role=”navigation” arial-label="Menú de informacion.">
+            <li><a role="button" arial-label="Enlace a facebook." tabindex="0" class="white-text" href="#!"><img
+                  class="responsive-img" src="/imagenes/facebook.png" alt="Logo facebook" width="25"
+                  height="25"></img></a>
+              <a role="button" arial-label="Enlace a linkedin." tabindex="0" class="white-text" href="#!"><img
+                  class="responsive-img" src="/imagenes/linkedin.png" alt="Logo facebook" width="25"
+                  height="25"></img></a>
+            </li>
+            <li><a role="button" arial-label="Enlace a instagram." tabindex="0" class="white-text" href="#!"><img
+                  class="responsive-img" src="/imagenes/instagram.png" alt="Logo instagram" width="25"
+                  height="25"></img></a>
+              <a role="button" arial-label="Enlace a twitter." tabindex="0" class="white-text" href="#!"><img
+                  class="responsive-img" src="/imagenes/twitter.png" alt="Logo twitter" width="25"
+                  height="25"></img></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright blue-grey darken-3">
+      <div class="container">
+        <p>Diseñado por <a tabindex="0" class="red-text darken-4" href="">José Javier Díaz González</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  <script src="js/firebase.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Panel - Consulters</title>
+
+  <link rel="icon" href="images/logo_tiempo.png" sizes="32x32">
+
+  <!-- CORE CSS-->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet"
+    media="screen,projection">
+</head>
+
+<body>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <nav class="light-blue darken-4" role=”banner” arial-label="Cabecera de la web.">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="../index.html" class="brand-logo left"> <img alt="Logo tiempo."
+          class="foto-logo-tiempo" src="/imagenes/logo_tiempo.png" width="35" height="35"></img></a>
+      <ul role="navigation" class="right">
+        <li><a role="button" arial-label="Pagina de inicio." class="white-text" href="../index.html">Inicio</a></li>
+        <li><a role="button" arial-label="Pagina de contactos." class="white-text" href="../contacto.html">Contacto</a>
+        </li>
+      </ul>
+  </nav>
+
+  <div id="main" role="navigation" arial-label="Menu de navegacion principal.">
+    <div class="wrapper">
+      <aside id="left-sidebar-nav">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation">
+          <li class="user-details light-blue darken-4">
+            <div class="row">
+              <div class="col col s4 m4 l4">
+                <img src="images/silueta.png" alt="" class="circle responsive-img valign profile-image">
+              </div>
+              <div class="col col s8 m8 l8">
+                <a role="button" class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn"
+                  id="alumno" href="#" data-activates="profile-dropdown">Javi<i
+                    class="mdi-navigation-arrow-drop-down right"></i></a>
+                <p class="user-roal">Alumno</p>
+              </div>
+            </div>
+          </li>
+          <li class="bold"><a tabindex="0" role="button" arial-label="Ve a inicio." href="../index.html"
+              class="waves-effect"><i class="mdi-action-home"></i> Inicio</a>
+          <li class="bold active"><a tabindex="0" role="button" arial-label="Ve a el panel." href="panel.html"
+              class="waves-effect waves-light"><i class="mdi-action-dashboard"></i> Panel</a>
+          </li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion"></ul>
+          </li>
+          <li class="bold"><a tabindex="0" role="button" arial-label="Ve al calendario." href="calendar.html"
+              class="waves-effect waves-light-blue darken-4"><i class="mdi-editor-insert-invitation"></i> Calendario</a>
+          </li>
+
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+
+              <li class="bold"><a tabindex="0" role="button" arial-label="Ve al calendario." href="javascript:singout()"
+                  class="waves-effect waves-light-blue darken-4"><i class="mdi-toggle-check-box"></i>Salir</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <a tabindex="0" role="button" href="#" data-activates="slide-out"
+          class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only light-blue darken-4"><i
+            class="mdi-navigation-menu"></i></a>
+      </aside>
+
+      <section id="content" role="main" arial-label="Informacion del panel.">
+        <div id="breadcrumbs-wrapper" aria-label="Breadcrumbs">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m12 l12">
+                <h1 class="breadcrumbs-title">Panel</h1>
+                <ol class="breadcrumbs">
+                  <li><a role="button" arial-label="Ve al inicio de la web." href="../index.html">Incio</a></li>
+                  <li class="active">Panel</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div id="card-widgets">
+            <div class="row">
+              <div class="col s9">
+                <ul id="task-card" class="collection with-header">
+                  <li class="collection-header cyan">
+                    <h4 class="task-card-title">Tareas</h4>
+                    <p class="task-card-date">Totales:</p>
+                  </li>
+                  <a role="button" aria-label="Nueva ventana añadir una nueva tarea." aria-expanded="false"
+                    href="#task-modal" class="task-add modal-trigger btn-floating waves-effect waves-light"><i
+                      class="mdi-content-add"></i></a>
+                  <li class="collection-item dismissable">
+                    <input type="checkbox" id="task1" />
+                    <label role="checkbox" aria-label="Se marca si se ha realizado la tarea o no" for="task1">Tenis <a
+                        href="#" class="secondary-content"><span class="ultra-small">Hoy</span></a>
+                    </label>
+                    <span class="task-cat green">Variados</span>
+                  </li>
+                  <li class="collection-item dismissable">
+                    <input type="checkbox" id="task2" />
+                    <label role="checkbox" aria-label="Se marca si se ha realizado la tarea o no" for="task2">Pádel<a
+                        href="#" class="secondary-content"><span class="ultra-small">Viernes</span></a>
+                    </label>
+                    <span class="task-cat green">Variados</span>
+                  </li>
+                  <li class="collection-item dismissable">
+                    <input type="checkbox" id="task3">
+                    <label role="checkbox" aria-label="Se marca si se ha realizado la tarea o no" for="task3">Tareas
+                      CYA<a href="#" class="secondary-content"><span class="ultra-small">Lunes</span></a>
+                    </label>
+                    <span class="task-cat  purple darken-1">Universidad</span>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+            </div>
+
+            <div id="task-modal" class="modal" role="" arial-label="Añadir nueva tarea al panel.">
+              <nav class="task-modal-nav teal">
+                <div class="nav-wrapper">
+                  <div class="left col s12 m5 l5">
+                    <ul>
+                      <li><a href="#!" class="todo-title">Nueva tarea</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <div class="modal-content" role="form" aria-label="Ventana para rellenar la nueva tarea.">
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <input id="todo-title" type="text" class="validate">
+                        <label for="todo-title">Título</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s5">
+                        <select>
+                          <option value="" disabled selected>Elige una opción</option>
+                          <option value="1">Variados</option>
+                          <option value="2">Universidad</option>
+                          <option value="3">Personales</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <textarea id="comments" class="materialize-textarea" length="500"></textarea>
+                        <label for="comments">Comentario</label>
+                        <span class="character-counter"></span>
+                      </div>
+                    </div>
+                    <a role="button" class="btn waves-effect waves-light center teal" id="button-enviar" tabindex="0"
+                      aria-label="Añadir tarea">Añadir</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    </div>
+
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
+    <!--materialize js-->
+    <script type="text/javascript" src="js/materialize.js"></script>
+
+    <!--  Scripts-->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="js/au.js"></script>
+
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.js"></script>
+</body>
+
+</html>

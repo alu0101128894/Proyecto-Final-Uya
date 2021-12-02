@@ -1,3 +1,3 @@
 # Proyecto Final - Usabilidad y Accesibilidad
-
-José Javier Díaz González
+- Curso 2020-2021
+- Alumno: José Javier Díaz González
